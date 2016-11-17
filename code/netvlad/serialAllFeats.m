@@ -39,6 +39,7 @@ function serialAllFeats(net, imPath, imageFns, outFn, varargin)
     
     prog= tic;
     
+    fout= fopen(outFn, 'wb');
     for iBatch= 1:nBatches
         relja_progress(iBatch, nBatches, 'serialAllFeats', prog);
         
@@ -73,7 +74,7 @@ function serialAllFeats(net, imPath, imageFns, outFn, varargin)
         clear res;
         
         if iBatch==1
-            fout= fopen(outFn, 'wb');
+            % fout= fopen(outFn, 'wb');
             [buffer, bufferSize]= relja_makeBuffer(feats(:,1), 200);
         end
         
