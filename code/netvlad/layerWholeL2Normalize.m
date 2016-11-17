@@ -4,7 +4,7 @@ classdef layerWholeL2Normalize
         type= 'custom'
         name= 'wholeL2'
         precious= false
-        weights= {}
+        weights
     end
     
     methods

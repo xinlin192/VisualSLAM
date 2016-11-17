@@ -39,7 +39,7 @@ for l = 1:numel(net.layers)
   % check weights format
   switch layer.type
     case {'conv', 'convt', 'bnorm'}
-      if ~isfield(layer, 'weights')
+      if ~(isfield(layer, 'weights') || isprop(layer, 'weights'))
         layer.weights = {...
           layer.filters, ...
           layer.biases} ;
@@ -47,7 +47,7 @@ for l = 1:numel(net.layers)
         layer = rmfield(layer, 'biases') ;
       end
   end
-  if ~isfield(layer, 'weights')
+  if ~(isfield(layer, 'weights') || isprop(layer, 'weights'))
     layer.weights = {} ;
   end
 
