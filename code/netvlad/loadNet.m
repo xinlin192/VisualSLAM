@@ -15,8 +15,8 @@ function net= loadNet(netID, layerName)
     end
     
     paths= localPaths();
-    net= load( fullfile(paths.pretrainedCNNs, netname));
-    
+    % net= load( fullfile(paths.pretrainedCNNs, netname));
+    load( fullfile(paths.pretrainedCNNs, netname), 'net');
     net= vl_simplenn_tidy(net); % matconvnet beta17 or newer is needed
     
     if isfield(net.meta, 'classes')
