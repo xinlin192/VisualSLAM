@@ -17,7 +17,7 @@ function paths= localPaths()
     
     % --- dataset specifications
     
-    paths.dsetSpecDir= '~/Desktop/VisualSLAM/code/netvlad/datasets/';
+    paths.dsetSpecDir= '~/Desktop/VisualSLAM/code/netvlad/datasets';
     
     % --- dataset locations
     paths.dsetRootPitts= '~/Desktop/VisualSLAM/code/databases/Pittsburgh/'; % should contain images/ and queries/

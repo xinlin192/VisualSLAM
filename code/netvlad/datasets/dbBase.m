@@ -40,6 +40,7 @@ classdef dbBase < handle
             
             paths= localPaths();
             dbFn= sprintf('%s/%s.mat', paths.dsetSpecDir, db.name);
+            dbFn
             
             if exist(dbFn, 'file')
                 load(dbFn, 'dbStruct');

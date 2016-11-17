@@ -6,9 +6,10 @@ net= relja_simplenn_tidy(net); % potentially upgrate the network to the latest v
 
 im= vl_imreadjpeg({which('football.jpg')}); im= im{1}; % slightly convoluted because we need the full image path for `vl_imreadjpeg`, while `imread` is not appropriate - see `help computeRepresentation`
 feats= computeRepresentation(net, im, 'useGPU', false); % add `'useGPU', false` if you want to use the CPU
+% serialAllFeats(net, imPath, imageFns, outputFn);
 
-serialAllFeats(net, imPath, imageFns, outputFn);
-dbTest= dbTokyo247();
+% dbTest= dbTokyo247();
+dbTest= dbTiny('train');
 paths= localPaths();
 dbFeatFn= sprintf('%s%s_%s_db.bin', paths.outPrefix, netID, dbTest.name);
 qFeatFn = sprintf('%s%s_%s_q.bin', paths.outPrefix, netID, dbTest.name);
