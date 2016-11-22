@@ -14,10 +14,10 @@ import scipy.io as sio
 import numpy as np
 
 GROUND_TRUTH_PATH = os.path.expanduser(
-    '~/bags/IJRR_2008_Dataset/Data/NewCollege/masks/NewCollegeGroundTruth.mat')
+    '/home/jimmylin/Desktop/VisualSLAM/code/bow_slam_loop_closure/dataset/NewCollegeGroundTruth.mat')
 
 WORK_FOLDER = os.path.expanduser(
-    '~/dev/simple_slam_loop_closure/out/')
+    '/home/jimmylin/Desktop/VisualSLAM/code/bow_slam_loop_closure/out/')
 
 if __name__ == "__main__":
 

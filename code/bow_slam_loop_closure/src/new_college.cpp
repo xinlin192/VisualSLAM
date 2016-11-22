@@ -49,10 +49,12 @@ int main(int argc, char* argv[]) {
     }
 
     cout << "Writing output..." << endl;
+    cout << "output file = " << getenv("HOME")
+        << string("/Desktop/VisualSLAM/code/bow_slam_loop_closure/out/confusion_matrix.txt") <<  endl;
 
     ofstream of;
     of.open(
-        getenv("HOME") + string("/dev/simple_slam_loop_closure/out/confusion_matrix.txt"));
+        getenv("HOME") + string("/Desktop/VisualSLAM/code/bow_slam_loop_closure/out/confusion_matrix.txt"));
 
     // Compute confusion matrix
     // i.e. the (i, j) element of the matrix contains the distance
@@ -67,4 +69,17 @@ int main(int argc, char* argv[]) {
 
     of.close();
     cout << "Output done" << endl;
+
+    /*
+    vector<float> score;
+    for (unsigned int i = 0; i < bow_vecs.size(); i++) {
+        score.push_back(descriptor.vocab_->score(bow_vecs[0], bow_vecs[i]));
+    }
+    sort(score.begin(), score.end());
+    for (unsigned int i = 0; i < bow_vecs.size(); i++) {
+        cout << score[i] << ", ";
+    }
+    */
+    cout << endl;
+
 }
